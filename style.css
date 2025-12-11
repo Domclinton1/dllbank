@@ -1,0 +1,265 @@
+
+/* ====================== Reset ===================== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:#f5f6fa;
+  color:#222;
+  line-height:1.6;
+}
+
+/* ====================== Header ===================== */
+/* Header */
+header {
+  width: 100%;
+  background: #000;
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 55px;
+}
+
+/* Menu Desktop */
+nav {
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #00c3ff;
+}
+
+/* HAMBURGUER MENU */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* Overlay */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  z-index: 900;
+}
+
+/* --- MOBILE --- */
+@media (max-width: 830px) {
+
+  /* Esconde menu normal */
+  nav {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    width: 260px;
+    background: #111;
+    flex-direction: column;
+    padding-top: 120px;
+    padding-left: 25px;
+    gap: 25px;
+    transition: 0.4s ease-in-out;
+    z-index: 1100;
+  }
+
+  nav a {
+    font-size: 18px;
+  }
+
+  nav.active {
+    left: 0;
+  }
+
+  /* Mostrar menu toggle */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Animação X */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(10px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-10px);
+  }
+
+  /* Mostrar overlay */
+  #overlay.active {
+    display: block;
+  }
+}
+
+
+/* ====================== HERO ===================== */
+#hero{
+  position: relative;
+  background:#0d0f14 url('./assets/images/banner.png') center/cover no-repeat;
+  color:white;
+  padding:140px 20px;
+  text-align:center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#hero::before{
+  content:"";
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.55); /* intensidade do sombreado */
+  z-index:0;
+}
+
+#hero h1,
+#hero p {
+  position:relative;
+  z-index:1; /* garante que o texto fica acima do overlay */
+}
+
+#hero h1{ 
+  font-size:2rem;
+  font-weight:700;
+  margin-bottom:20px; 
+  line-height: 1;
+  text-transform: uppercase;
+}
+#hero p{ 
+  font-size:1.2rem;
+  margin-bottom:35px; 
+  color:#e5e5e5; 
+}
+
+.btn{
+  background:#4f8bff;
+  padding:15px 35px;
+  border-radius:5px;
+  color:white;
+  font-size:1.1rem;
+  border:none;
+  cursor:pointer;
+  transition:.2s;
+  position: relative;
+  z-index: 2; /* opcional */
+}
+.btn:hover{ background:#3e73d4; }
+
+/* ====================== VANTAGENS ===================== */
+section{ padding:70px 0; }
+h2{ text-align:center; font-size:2rem; margin-bottom:10px; }
+.sub{ text-align:center; color:#555; margin-bottom:40px; }
+
+.vantagens-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  text-align:center;
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-6px);
+}
+.card svg{
+  width:55px;
+  margin-bottom:15px;
+}
+
+/* ====================== Como funciona ===================== */
+#como{
+  background:#fff;
+}
+.como-wrapper{
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.como-wrapper img{
+  width:50%;
+  min-width:300px;
+  border-radius:12px;
+}
+.como-text{
+  flex:1;
+}
+.como-text h3{ margin-bottom:15px; }
+.como-text p{ margin-bottom:15px; }
+
+/* ====================== Tipos de Crédito ===================== */
+.credit-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.credit{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.05);
+}
+.credit h4{ margin-bottom:8px; }
+
+/* ====================== Depoimentos ===================== */
+.testimonial{
+  background:white;
+  border-left:5px solid #4f8bff;
+  padding:25px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* ====================== Footer ===================== */
+footer{
+  background:#0d0f14;
+  color:#cfcfcf;
+  text-align:center;
+  padding:40px 0;
+}
+footer p{ margin-bottom:10px; }
+

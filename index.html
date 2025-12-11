@@ -5,185 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DLL Group – Crédito Rápido e Seguro</title>
 
-<style>
-/* ====================== Reset ===================== */
-*{margin:0;padding:0;box-sizing:border-box;}
-body{
-  font-family: "Segoe UI", Arial, sans-serif;
-  background:#f5f6fa;
-  color:#222;
-  line-height:1.6;
-}
-
-/* ====================== Header ===================== */
-header{
-  background:#0d0f14;
-  padding:18px 0;
-  color:white;
-  position:sticky; top:0;
-  z-index:999;
-}
-.container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.logo{
-  font-size:1.7rem;
-  font-weight:700;
-}
-
-/* menu desktop */
-nav a{
-  margin-left:25px;
-  color:#fff;
-  font-size:1rem;
-  transition:.2s;
-}
-nav a:hover{ color:#4f8bff; }
-
-/* ====================== HERO ===================== */
-#hero{
-  position: relative;
-  background:#0d0f14 url('./assets/images/banner.png') center/cover no-repeat;
-  color:white;
-  padding:140px 20px;
-  text-align:center;
-  overflow: hidden;
-}
-
-#hero::before{
-  content:"";
-  position:absolute;
-  left:0; top:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.55); /* intensidade do sombreado */
-  backdrop-filter: blur(2px); /* opcional: deixa mais premium */
-  z-index:0;
-}
-
-#hero h1,
-#hero p {
-  position:relative;
-  z-index:1; /* garante que o texto fica acima do overlay */
-}
-
-#hero h1{ 
-  font-size:3rem;
-  font-weight:700;
-  margin-bottom:20px; 
-}
-#hero p{ 
-  font-size:1.2rem;
-  margin-bottom:35px; 
-  color:#e5e5e5; 
-}
-
-.btn{
-  background:#4f8bff;
-  padding:15px 35px;
-  border-radius:5px;
-  color:white;
-  font-size:1.1rem;
-  border:none;
-  cursor:pointer;
-  transition:.2s;
-}
-.btn:hover{ background:#3e73d4; }
-
-/* ====================== VANTAGENS ===================== */
-section{ padding:70px 0; }
-h2{ text-align:center; font-size:2rem; margin-bottom:10px; }
-.sub{ text-align:center; color:#555; margin-bottom:40px; }
-
-.vantagens-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-
-.card{
-  background:white;
-  padding:30px;
-  border-radius:10px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.06);
-  text-align:center;
-  transition:.3s;
-}
-.card:hover{
-  transform:translateY(-6px);
-}
-.card svg{
-  width:55px;
-  margin-bottom:15px;
-}
-
-/* ====================== Como funciona ===================== */
-#como{
-  background:#fff;
-}
-.como-wrapper{
-  display:flex;
-  gap:40px;
-  flex-wrap:wrap;
-  align-items:center;
-}
-.como-wrapper img{
-  width:50%;
-  min-width:300px;
-  border-radius:12px;
-}
-.como-text{
-  flex:1;
-}
-.como-text h3{ margin-bottom:15px; }
-.como-text p{ margin-bottom:15px; }
-
-/* ====================== Tipos de Crédito ===================== */
-.credit-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-}
-.credit{
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 6px 18px rgba(0,0,0,0.05);
-}
-.credit h4{ margin-bottom:8px; }
-
-/* ====================== Depoimentos ===================== */
-.testimonial{
-  background:white;
-  border-left:5px solid #4f8bff;
-  padding:25px;
-  border-radius:10px;
-  margin-bottom:20px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.05);
-}
-
-/* ====================== Footer ===================== */
-footer{
-  background:#0d0f14;
-  color:#cfcfcf;
-  text-align:center;
-  padding:40px 0;
-}
-footer p{ margin-bottom:10px; }
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
   <div class="container">
-    <div class="logo">DLL Group</div>
-    <nav>
+    <a href="#" class="logo">
+      <img src="./assets/images/Logo_DLL-removebg-preview.png" alt="">
+    </a>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav id="nav-menu">
       <a href="#hero">Início</a>
       <a href="#vantagens">Vantagens</a>
       <a href="#como">Como Funciona</a>
@@ -193,6 +32,9 @@ footer p{ margin-bottom:10px; }
     </nav>
   </div>
 </header>
+
+<div id="overlay"></div>
+
 
 <section id="hero">
   <h1>Crédito rápido, seguro e autorizado</h1>
@@ -303,10 +145,13 @@ footer p{ margin-bottom:10px; }
 </section>
 
 <footer id="footer">
-  <p>DLL Group | CNPJ 00.000.000/0000-00</p>
+  <p>DLL Group | 63.849.793/0001-38</p>
   <p>Atendimento via WhatsApp: (00) 00000-0000</p>
-  <p>© 2025 DLL Group — Todos os direitos reservados</p>
+  <p>© 2014 - 2025 DLL grup solutions ltda. <br> Todos os direitos reservados</p>
+  <div class="logo">
+    <img src="./assets/images/Logo_DLL-removebg-preview.png" alt="">
+  </div>
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
