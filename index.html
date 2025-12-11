@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DLL Group – Crédito Rápido e Seguro</title>
+
+<style>
+/* ====================== Reset ===================== */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:#f5f6fa;
+  color:#222;
+  line-height:1.6;
+}
+
+/* ====================== Header ===================== */
+header{
+  background:#0d0f14;
+  padding:18px 0;
+  color:white;
+  position:sticky; top:0;
+  z-index:999;
+}
+.container{
+  width:90%;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.logo{
+  font-size:1.7rem;
+  font-weight:700;
+}
+
+/* menu desktop */
+nav a{
+  margin-left:25px;
+  color:#fff;
+  font-size:1rem;
+  transition:.2s;
+}
+nav a:hover{ color:#4f8bff; }
+
+/* ====================== HERO ===================== */
+#hero{
+  position: relative;
+  background:#0d0f14 url('./assets/images/banner.png') center/cover no-repeat;
+  color:white;
+  padding:140px 20px;
+  text-align:center;
+  overflow: hidden;
+}
+
+#hero::before{
+  content:"";
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.55); /* intensidade do sombreado */
+  backdrop-filter: blur(2px); /* opcional: deixa mais premium */
+  z-index:0;
+}
+
+#hero h1,
+#hero p {
+  position:relative;
+  z-index:1; /* garante que o texto fica acima do overlay */
+}
+
+#hero h1{ 
+  font-size:3rem;
+  font-weight:700;
+  margin-bottom:20px; 
+}
+#hero p{ 
+  font-size:1.2rem;
+  margin-bottom:35px; 
+  color:#e5e5e5; 
+}
+
+.btn{
+  background:#4f8bff;
+  padding:15px 35px;
+  border-radius:5px;
+  color:white;
+  font-size:1.1rem;
+  border:none;
+  cursor:pointer;
+  transition:.2s;
+}
+.btn:hover{ background:#3e73d4; }
+
+/* ====================== VANTAGENS ===================== */
+section{ padding:70px 0; }
+h2{ text-align:center; font-size:2rem; margin-bottom:10px; }
+.sub{ text-align:center; color:#555; margin-bottom:40px; }
+
+.vantagens-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+  text-align:center;
+  transition:.3s;
+}
+.card:hover{
+  transform:translateY(-6px);
+}
+.card svg{
+  width:55px;
+  margin-bottom:15px;
+}
+
+/* ====================== Como funciona ===================== */
+#como{
+  background:#fff;
+}
+.como-wrapper{
+  display:flex;
+  gap:40px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.como-wrapper img{
+  width:50%;
+  min-width:300px;
+  border-radius:12px;
+}
+.como-text{
+  flex:1;
+}
+.como-text h3{ margin-bottom:15px; }
+.como-text p{ margin-bottom:15px; }
+
+/* ====================== Tipos de Crédito ===================== */
+.credit-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
+.credit{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.05);
+}
+.credit h4{ margin-bottom:8px; }
+
+/* ====================== Depoimentos ===================== */
+.testimonial{
+  background:white;
+  border-left:5px solid #4f8bff;
+  padding:25px;
+  border-radius:10px;
+  margin-bottom:20px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* ====================== Footer ===================== */
+footer{
+  background:#0d0f14;
+  color:#cfcfcf;
+  text-align:center;
+  padding:40px 0;
+}
+footer p{ margin-bottom:10px; }
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">DLL Group</div>
+    <nav>
+      <a href="#hero">Início</a>
+      <a href="#vantagens">Vantagens</a>
+      <a href="#como">Como Funciona</a>
+      <a href="#creditos">Créditos</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#footer">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <h1>Crédito rápido, seguro e autorizado</h1>
+  <p>Simulação grátis e atendimento imediato sem burocracia.</p>
+  <button class="btn" onclick="window.location.href='https://wa.me/559999999999?text=Quero+simular+um+empréstimo'">Falar no WhatsApp</button>
+</section>
+
+<section id="vantagens">
+  <h2>Por que escolher a DLL Group?</h2>
+  <p class="sub">Mais confiança, mais segurança, mais velocidade.</p>
+
+  <div class="container vantagens-grid">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <svg fill="#4f8bff" viewBox="0 0 24 24"><path d="M12 7a2 2 0 012 2v1h1a2 2 0 110 4h-1v1a2 2 0 11-4 0v-1H9a2 2 0 110-4h1V9a2 2 0 012-2z"/></svg>
+      <h3>Atendimento Imediato</h3>
+      <p>Equipe dedicada pronta para atender você em tempo real.</p>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <svg fill="#4f8bff" viewBox="0 0 24 24"><path d="M3 3h18v2H3zm2 4h14v2H5zm-2 4h18v2H3zm2 4h10v2H5z"/></svg>
+      <h3>Total Transparência</h3>
+      <p>Sem letras miúdas: tudo explicado de forma clara.</p>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <svg fill="#4f8bff" viewBox="0 0 24 24"><path d="M12 1l3 5h-6l3-5zm4.5 8l3 5h-6l3-5zm-9 0l3 5h-6l3-5zm4.5 8l3 5h-6l3-5z"/></svg>
+      <h3>Aprovação Rápida</h3>
+      <p>Processo digital e simplificado para você não perder tempo.</p>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card">
+      <svg fill="#4f8bff" viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+      <h3>Segurança Máxima</h3>
+      <p>Seus dados são protegidos com criptografia avançada.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="como">
+  <div class="container como-wrapper">
+
+    <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?q=80&w=1000" alt="Atendimento DLL">
+
+    <div class="como-text">
+      <h2>Como funciona o processo?</h2>
+      <h3>Simples, transparente e sem estresse</h3>
+      <p>1. Você fala com nossa equipe no WhatsApp.</p>
+      <p>2. Analisamos seu perfil em minutos.</p>
+      <p>3. Apresentamos as melhores ofertas disponíveis.</p>
+      <p>4. Crédito liberado rapidamente após aprovação.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="creditos">
+  <h2>Opções de crédito</h2>
+  <p class="sub">Escolha o tipo ideal para o seu momento.</p>
+
+  <div class="container credit-grid">
+
+    <div class="credit">
+      <h4>Crédito Pessoal</h4>
+      <p>Rápido, prático e ideal para emergências ou projetos pessoais.</p>
+    </div>
+
+    <div class="credit">
+      <h4>Consignado</h4>
+      <p>Taxas mais baixas para aposentados, pensionistas e servidores.</p>
+    </div>
+
+    <div class="credit">
+      <h4>Crédito MEI / Autônomo</h4>
+      <p>Avaliação flexível e feita especialmente para pequenos empreendedores.</p>
+    </div>
+
+    <div class="credit">
+      <h4>Refinanciamento</h4>
+      <p>Reduza parcelas, unifique dívidas e melhore seu fluxo financeiro.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="depoimentos">
+  <h2>Clientes reais, resultados reais</h2>
+  <p class="sub">Depoimentos de pessoas que confiaram na DLL Group</p>
+
+  <div class="container">
+
+    <div class="testimonial">
+      <p>“Consegui meu empréstimo no mesmo dia. Atendimento humano e super transparente.”</p>
+      <small>— Maria S.</small>
+    </div>
+
+    <div class="testimonial">
+      <p>“Achei que ia ser burocrático, mas foi muito mais rápido do que eu imaginava.”</p>
+      <small>— João P.</small>
+    </div>
+
+  </div>
+</section>
+
+<footer id="footer">
+  <p>DLL Group | CNPJ 00.000.000/0000-00</p>
+  <p>Atendimento via WhatsApp: (00) 00000-0000</p>
+  <p>© 2025 DLL Group — Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
