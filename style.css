@@ -191,7 +191,10 @@ nav a:hover {
 section{ padding:70px 0; }
 h2{ text-align:center; font-size:2rem; margin-bottom:10px; }
 .sub{ text-align:center; color:#555; margin-bottom:40px; }
-
+#depoimentos, #creditos .credit-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .vantagens-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -243,6 +246,7 @@ h2{ text-align:center; font-size:2rem; margin-bottom:10px; }
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
+  
 }
 .credit{
   background:white;
@@ -260,8 +264,14 @@ h2{ text-align:center; font-size:2rem; margin-bottom:10px; }
   border-radius:10px;
   margin-bottom:20px;
   box-shadow:0 4px 15px rgba(0,0,0,0.05);
+  width: fit-content;
 }
-
+#depoimentos {
+    justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 /* ====================== Footer ===================== */
 footer{
   background:#0d0f14;
